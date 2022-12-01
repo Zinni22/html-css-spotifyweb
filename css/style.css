@@ -4,13 +4,111 @@
     padding: 0;
     box-sizing: border-box;
 }
+.flex{
+    display: flex;
+}
 
 /* REGOLE GENERALI */
 body{
     font-family: 'Montserrat', sans-serif;
 }
-
+:root{
+    --footer-grey: #282828;
+    --main-blue: #141922;
+    --main-black: #080b12;
+    --main-green: #adff2f;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
 
 /******************************
 MAIN
  ******************************/
+.container-main{
+    width: 100%;
+    height: calc(100vh - 70px);
+
+    background-color: red;
+}
+.aside{
+    width:200px;
+    height: 100%;
+    background-color: black;   
+}
+.content{
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: var(--main-blue);
+    overflow: auto;
+    color: white;
+}
+.content .cta{
+    width: 100%;
+    background-color: var(--main-black);
+    height: 70px;
+    text-align: right;
+    padding: 1rem;
+}
+.content .cta .tasto{
+    font-size:12px;
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: inline-block;
+}
+.content ul{
+    justify-content: center;
+}
+.content ul li{
+    color: gray;
+    font-size: 12px;
+    padding: 1rem;
+}
+.content ul a:nth-of-type(1) li{
+    border-bottom: 1px solid var(--main-green);
+}
+.content h2{
+    margin:40px 20px;
+}
+.content .songs-container{
+    width: 95%;
+    margin-left: 20px;
+    justify-content: space-between;
+}
+.content .songs-container .songs{
+    width: calc(100%/6 - 1rem);
+    text-align: center;
+}
+.content .songs-container .songs img{
+    width: 100%;
+    width: 100%;
+}
+.content .songs-container .songs h4{
+    margin: 0.5rem 0;
+}
+
+
+
+
+
+ /*******************************
+ FOOTER
+ *********************************/
+ footer{
+    background-color: var(--footer-grey);
+    height:70px;
+    justify-content: space-between;
+    z-index: 30;
+ }
+ footer > div{
+    height: 100%;
+
+
+    background-color: pink;
+ }
