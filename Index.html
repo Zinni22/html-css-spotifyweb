@@ -17,6 +17,9 @@
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- ICONA -->
+    <link rel="icon" type="image/png" href="https://wwwmarketing.scdn.co/img/favicon-16x16.png" sizes="16x16">
+
 </head>
 <body>
 
@@ -24,50 +27,101 @@
     <main>
         <div class="container-main flex">
 
-            <section class="aside">
-                <img src="img/logo.svg" alt="logo-big">
+            <aside class="aside flex">
 
-                <ul class="first-list-aside">
-                    <a href="#">
-                        <li>
-                            <i class="fa-solid fa-house"></i>
-                            Home
-                        </li>
-                    </a>
+                <div class="aside-top">
+                    <img src="img/logo.svg" class="big-logo" alt="logo-big">
+                    <img src="img/logo-small.svg" class="small-logo" alt="small-logo">
 
-                    <a href="#">
-                        <li>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            Cerca
-                        </li>
-                    </a>
+                    <nav>
+                        <ul class="first-list-aside">
+                            <a href="#">
+                                <li>
+                                    <img src="img/home.svg" alt="">
+                                    <span>Home</span> 
+                                </li>
+                            </a>
 
-                    <a href="#">
-                        <li>
-                            <i class="fa-solid fa-grip-lines-vertical"></i>
-                            La tua libreria
-                        </li>
-                    </a>
-                </ul>
+                            <a href="#">
+                                <li>
+                                    <img src="img/search.svg" alt="">
+                                    <span>Cerca</span>
+                                </li>
+                            </a>
 
-                <span>
-                    PLAYLIST
-                </span>
+                            <a href="#">
+                                <li>
+                                    <img src="img/libreria.svg" alt="">
+                                    <span>La tua libreria</span> 
+                                </li>
+                            </a>
+                        </ul>
+                    </nav>
 
-                <ul class="second-list-aside">
-                    <a href="#">
-                        <li>Crea Playlits</li>
-                        <li>Nuova Playlits</li>
-                        <li>Nuova Playlits</li>
-                        <li>Nuova Playlits</li>
-                        <li>Nuova Playlits</li>
-                        <li>Nuova Playlits</li>
-                        <li>Nuova Playlits</li>
-                        <li>Nuova Playlits</li>
-                    </a>
-                </ul>
+                    <section class="playlist">
 
-            </section>
+                        <h4>
+                            PLAYLIST
+                        </h4>
+
+                        <div class="crea">
+                            <a href="#">
+                                <i class="fa-solid fa-square-plus fa-2x"></i>
+                                <span>Crea playlist</span>
+                            </a>
+                        </div>
+
+                        <ul class="second-list-aside">
+                            <a href="#">
+                                <li>Nuova Playlits</li>
+                            </a>
+
+                            <a href="#">
+                                <li>Nuova Playlits</li>
+                            </a>
+
+                            <a href="#">
+                                <li>Nuova Playlits</li>
+                            </a>
+
+                            <a href="#">
+                                <li>Nuova Playlits</li>
+                            </a>
+
+                            <a href="#">
+                                <li>Nuova Playlits</li>
+                            </a>
+
+                            <a href="#">
+                                <li>Nuova Playlits</li>
+                            </a>
+
+                            <a href="#">
+                                <li>Nuova Playlits</li>
+                            </a>
+                        </ul>
+
+                    </section>
+                </div>
+
+                <div class="aside-bottom">
+                    <div class="install">
+                        <a href="#">
+                            <i class="fa-regular fa-circle-down"></i>
+                            <span>Installa app</span>
+                        </a>
+                    </div>
+
+                    
+                    <div class="user flex">
+                            <img src="img/profile.svg" alt="profile">
+                            <a href="">
+                                <span>John Doe</span>
+                            </a>
+                    </div>
+                </div>
+
+            </aside>
 
             <section class="content">
 
@@ -82,6 +136,7 @@
                 <ul class="flex">
                     <a href="#">
                         <li>IN EVIDENZA</li>
+                        <hr>
                     </a>
 
                     <a href="#">
@@ -152,7 +207,6 @@
                             <h4>Sinister</h4>
                             <span>Subtitle</span>
                         </div>
-
                     </div>
 
                     <h2>
@@ -209,16 +263,58 @@
     <!-- INIZIO FOOTER -->
     <footer class="flex">
 
-        <div class="song">
-            sx
+        <div class="song flex"> 
+                <img src="img/nitro.jpg" alt="nitro">
+
+                <div>
+                    <h5>Rotten</h5>
+                    <a href="#" class="nitro">
+                        Nitro
+                    </a>
+                </div>
+
+                <div class="icon flex">
+                    <a href="#">    
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-regular fa-folder"></i>
+                    </a>
+                </div>
         </div>
 
         <div class="player">
-            centro
+
+            <div class="tasti flex">
+                <i class="fa-solid fa-shuffle"></i>
+                <i class="fa-solid fa-backward-step"></i>
+                <i class="fa-regular fa-circle-play fa-2x"></i>
+                <i class="fa-solid fa-forward-step"></i>
+                <i class="fa-solid fa-rotate-right"></i>
+            </div>
+
+            <div class="flex song-bar">
+                <span>0:25</span>
+                <div class="bar">
+                    <div class="bar-2"></div>
+                    <div class="circle-bar"></div>
+                </div>
+                <span>4:35</span>
+            </div>
+
         </div>
 
-        <div class="volume">
-            dx
+        <div class="volume flex">
+            <i class="fa-solid fa-list"></i>
+            <i class="fa-solid fa-display"></i>
+            <i class="fa-solid fa-volume-high"></i>
+
+            <div class="bar">
+                <div class="bar-2"></div>
+                <div class="circle-bar"></div>
+            </div>
+
         </div>
 
     </footer>

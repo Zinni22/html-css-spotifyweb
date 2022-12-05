@@ -26,6 +26,9 @@ a{
     text-decoration: none;
     color: var(--main-grey);
 }
+a:hover{
+    color: white;
+}
 .margin-20{
     margin-left: 2rem;
 }
@@ -37,6 +40,7 @@ MAIN
 .container-main{
     width: 100%;
     height: calc(100vh - 70px);
+    overflow: hidden;
 
     background-color: red;
 }
@@ -46,21 +50,65 @@ MAIN
 .aside{
     width:200px;
     height: 100%;
-    padding: 1rem;
-    background-color: black;   
+    min-height: 400px;
+    background-color: black; 
+    justify-content: space-between;  
+    flex-direction: column;
 }
-.aside img{
+.aside-top{
+    height: calc(100% - 70px);
+    padding: 1rem 0;
+}
+.big-logo{
     width: 130px;
-    margin-bottom: 30px;
+    margin: 0 0 2rem 1rem;
 }
-.aside ul li{
-    padding: 0.3rem;
+.small-logo{
+    display: none;
 }
-.aside span{
-    display: inline-block;
+h4{
+    color: white;
+    margin: 2rem 0 0.5rem 1rem;
+}
+.aside-top ul li{
+    padding: 0.3rem 1rem;
+}
+.first-list-aside img{
+    width:25px;
+}
+.first-list-aside a li > *, .playlist .crea a > *{
+    vertical-align: middle;
+}
+.first-list-aside a:first-of-type li{
+    border-left: 4px solid var(--main-green);
+}
+.playlist .crea i{
+    margin: 0.3rem 0.3rem 0 1rem;
+}
+.playlist .second-list-aside{
+    height:230px;
+    overflow: auto;
+}
+.aside-bottom{
+    background-color: black;
+    height: 70px;
+    padding: 0 1rem;
+}
+.aside-bottom .install{
+    border-bottom: 1px solid var(--main-grey);
+    padding: 0.4rem 0;
+}
+.aside-bottom .user{
+    margin: 0.5rem 0;
+}
+.aside-bottom .user img{
+    width: 15px;
+    margin-right: 1rem;
+}
+.aside-bottom .user span{
     color: white;
     font-weight: 700;
-    margin: 1.5rem 0 0.5rem 0;
+    font-size: 12px;
 }
 
 /* CONTENT */
@@ -73,10 +121,13 @@ MAIN
 }
 .content .cta{
     width: 100%;
-    background-color: var(--main-black);
+    background-color:rgb(8, 11, 18, 0.7);
     height: 70px;
     text-align: right;
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 30;
 }
 .content .cta .tasto{
     font-size:12px;
@@ -87,30 +138,40 @@ MAIN
     border-radius: 20px;
     display: inline-block;
 }
-.content ul{
+.content .cta .tasto:hover{
+    padding: 0.7rem 2rem;
+    font-size: 15px;
+    border-radius: 30px;
+}
+.content > ul{
     justify-content: center;
 }
-.content ul li{
+.content > ul li{
     color: var(--main-grey);
     font-size: 12px;
     padding: 1rem;
 }
-.content ul a:nth-of-type(1) li{
-    border-bottom: 1px solid var(--main-green);
+.content > ul a:first-of-type hr{
+    color: var(--main-green);
+    width: 40%;
+    margin: 0 auto;
+}
+.content > ul a li:hover{
+    color: white;
 }
 .content h2{
     margin:40px 0 20px 0;
 }
 .content .songs-container{
-    width: 100%;
+    width: 95%;
 }
 .content .songs-container .songs{
     width: calc(100%/6 - 1rem);
     text-align: center;
     margin-right: 20px;
+    position: relative;
 }
 .content .songs-container .songs img{
-    width: 100%;
     width: 100%;
 }
 .content .songs-container .songs h4{
@@ -127,19 +188,230 @@ MAIN
 
 
 
-
  /*******************************
  FOOTER
  *********************************/
- footer{
+footer{
     background-color: var(--footer-grey);
     height:70px;
     justify-content: space-between;
+    position: relative;
     z-index: 30;
- }
- footer > div{
+}
+footer > div{
     height: 100%;
+    color: white;
+}
+
+/* SONG */
+.song{
+    width: 15%;
+    padding: 1rem 0.5rem;
+    align-items: center;
+}
+.song img{
+    height: 100%;
+    margin-right: 10px;
+}
+.song .nitro{
+    margin-right: 3rem;
+    font-size: 12px;
+}
+.song .nitro:hover{
+    text-decoration: underline;
+    color: var(--main-grey);
+}
+.song .icon a{
+    text-align: right;
+    margin: 0 0.5rem 0 0;
+    color: var(--main-grey);
+}
+.song > a:hover{
+    color: white;
+}
+.song .icon a:first-of-type{
+    color: var(--main-green);
+}
+
+/* PLAYER */
+.player{
+    width: 30%;
+    padding: 0.5rem;
+}
+.tasti{
+    justify-content: center;
+    align-items: center;
+}
+.player .tasti i{
+    margin:0 1rem;
+}
+
+.song-bar{
+    align-items: center;
+    margin: 0.5rem 0;
+}
+.song-bar span{
+    font-size: 12px;
+    margin: 0 1rem;
+}
+.bar{
+    width:100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--main-grey);
+    position: relative;
+}
+.bar .bar-2{
+    width:20%;
+    height:4px;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+.bar .circle-bar{
+    position: absolute;
+    top: -5px;
+    left: 17%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    display: none;
+}
+.bar:hover .bar-2{
+    background-color: var(--main-green);
+}
+.bar:hover .circle-bar{
+    display: inline-block;
+}
+
+/* VOLUME */
+.volume{
+    width: 15%;
+    padding: 1rem;
+    align-items: center;
+}
+.volume i{
+    margin-right: 1rem;
+}
+.volume .bar{
+    width: 70%;
+}
+.volume .bar .bar-2{
+    width: 30%;
+}
+.volume .bar .circle-bar{
+    left: 20px;
+}
 
 
-    background-color: pink;
- }
+/********************************** 
+RESPONSIVE
+**********************************/
+
+/* TABLET */
+@media screen and (max-width: 1100px) {
+    
+    .content > ul{
+        flex-wrap: wrap;
+    }
+    .content .songs-container{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .content .songs-container .songs{
+        width: calc(100%/4 - 10px);
+        margin-right: 10px;
+    }
+
+
+}
+
+
+/* MOBILE */
+@media screen and (max-width: 700px) {
+    
+    .content .songs-container .songs{
+        width: calc(100%/2 - 10px);
+        margin-right: 10px;
+    }
+
+    .song{
+        width: 30%;
+    }
+    .song .icon{
+        display: block;
+    }
+    .song-bar span{
+        margin: 0 0.2rem;
+    }
+    .volume{
+        width: 30%;
+    }
+
+
+}
+
+
+/* MICROMOBILE */
+@media screen and (max-width: 600px){
+
+    .aside{
+        width:50px;
+    }
+    .big-logo{
+        display: none;
+    }
+    .small-logo{
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .first-list-aside img{
+        width:25px;
+    }
+    .aside-top ul li{
+        padding: 0.3rem 0.8rem;
+    }
+    .first-list-aside a:first-of-type li{
+        border:none;
+    }
+    .first-list-aside a li span{
+        display: none;
+    }
+    .playlist > h4{
+        display: none;
+    }
+    .playlist .crea{
+        display: none;
+    }
+    .playlist .second-list-aside{
+        display: none;
+    }
+    .aside-bottom{
+        background-color: black;
+        height: 70px;
+        padding: 0 1rem;
+    }
+    .aside-bottom .user{
+        margin: 0.5rem 0;
+    }
+    .aside-bottom .user img{
+        width: 25px;
+        margin-right: 0;
+    }
+    .aside-bottom .install a span{
+        display: none;
+    }
+    .aside-bottom .user a{
+        display: none;
+    }
+
+    .content{
+        width: calc(100% - 50px);
+    }
+
+
+}
